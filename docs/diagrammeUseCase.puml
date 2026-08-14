@@ -1,0 +1,85 @@
+@startuml UseCases_StoreManagerPro
+left to right direction
+skinparam packageStyle rectangle
+
+actor "Admin Boutique" as Admin
+actor "Chargé de Vente" as Vente
+actor "Chargé de Stock" as Stock
+actor "Inventaire" as Inv
+
+rectangle "StoreManager Pro" {
+
+  usecase "S'authentifier" as SAuthentifier
+
+  package "Tableau de bord" {
+    usecase "Consulter le tableau de bord\n(KPI, alertes, ruptures)" as ConsulterTableauDeBord
+  }
+
+  package "Ventes (POS)" {
+    usecase "Enregistrer une vente" as EnregistrerVente
+    usecase "Sélectionner un client" as SelectionnerClient
+    usecase "Ajouter un article au panier" as AjouterArticlePanier
+    usecase "Vérifier la limite de crédit" as VerifierLimiteCredit
+    usecase "Consulter le registre des ventes" as ConsulterRegistreVentes
+  }
+
+  package "Gestion des dettes" {
+    usecase "Consulter les dettes clients" as ConsulterDettesClients
+    usecase "Enregistrer un remboursement" as EnregistrerRemboursement
+    usecase "Générer une dette" as GenererDette
+  }
+
+  package "Approvisionnements" {
+    usecase "Créer une commande fournisseur" as CreerCommandeFournisseur
+    usecase "Réceptionner un bon de livraison" as ReceptionnerBonLivraison
+    usecase "Mettre à jour le stock" as MettreAJourStock
+  }
+
+  package "Catalogue & tiers" {
+    usecase "Gérer les produits" as GererProduits
+    usecase "Gérer les clients" as GererClients
+    usecase "Gérer les fournisseurs" as GererFournisseurs
+    usecase "Consulter le catalogue" as ConsulterCatalogue
+  }
+}
+
+Admin --> SAuthentifier
+Vente --> SAuthentifier
+Stock --> SAuthentifier
+Inv --> SAuthentifier
+
+Admin --> ConsulterTableauDeBord
+
+Admin --> EnregistrerVente
+Vente --> EnregistrerVente
+EnregistrerVente ..> SelectionnerClient : <<include>>
+EnregistrerVente ..> AjouterArticlePanier : <<include>>
+EnregistrerVente ..> VerifierLimiteCredit : <<include>>
+EnregistrerVente ..> GenererDette : <<extend>>
+
+Admin --> ConsulterRegistreVentes
+Vente --> ConsulterRegistreVentes
+
+Admin --> ConsulterDettesClients
+Vente --> ConsulterDettesClients
+Admin --> EnregistrerRemboursement
+Vente --> EnregistrerRemboursement
+EnregistrerRemboursement ..> ConsulterDettesClients : <<include>>
+
+Admin --> CreerCommandeFournisseur
+Stock --> CreerCommandeFournisseur
+Admin --> ReceptionnerBonLivraison
+Stock --> ReceptionnerBonLivraison
+ReceptionnerBonLivraison ..> MettreAJourStock : <<include>>
+
+Admin --> GererProduits
+Stock --> GererProduits
+Admin --> GererClients
+Admin --> GererFournisseurs
+Stock --> GererFournisseurs
+
+Admin --> ConsulterCatalogue
+Stock --> ConsulterCatalogue
+Inv --> ConsulterCatalogue
+
+@enduml

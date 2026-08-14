@@ -1,0 +1,107 @@
+@startuml ClassDiagram_StoreManagerPro
+
+
+
+
+class Utilisateur {
+  - id 
+  - nom 
+  - email 
+  - motDePasse 
+  - role 
+
+}
+
+class Produit {
+  - id 
+  - nom 
+  - prixUnitaire 
+  - quantiteStock 
+
+}
+
+class Client {
+  - id 
+  - prenom 
+  - nom 
+  - telephone 
+  - email 
+  - limiteCredit 
+
+}
+
+class Fournisseur {
+  - id 
+  - nom 
+  - telephone 
+  - adresse 
+  - email 
+}
+
+class Commande {
+  - id 
+  - dateCommande 
+  - montantTotal 
+  - montantVerse 
+  - modeReglement 
+  - statut 
+
+}
+
+class LigneCommande {
+  - id 
+  - quantite 
+  - prixUnitaire 
+  - sousTotal 
+}
+
+class Dette {
+  - id 
+  - dateCreation 
+  - montantInitial 
+  - montantPaye 
+  - resteDu 
+  - statut 
+
+}
+
+class Paiement {
+  - id 
+  - datePaiement 
+  - montantVerse 
+  - modePaiement 
+}
+
+class Approvisionnement {
+  - id 
+  - refBL 
+  - dateReception 
+  - montantTotal 
+  - statut 
+
+}
+
+class LigneApprovisionnement {
+  - id 
+  - quantiteCommandee 
+  - quantiteRecue 
+  - coutUnitaire 
+  - sousTotal 
+}
+
+Utilisateur "1" --> "0..*" Commande 
+Client "1" --> "0..*" Commande
+Commande "1" *-- "1..*" LigneCommande
+Produit "1" --> "0..*" LigneCommande 
+
+Commande "1" --> "0..1" Dette 
+Client "1" --> "0..*" Dette 
+Dette "1" *-- "0..*" Paiement 
+
+Fournisseur "1" --> "0..*" Approvisionnement 
+Approvisionnement "1" *-- "1..*" LigneApprovisionnement 
+Produit "1" --> "0..*" LigneApprovisionnement 
+
+Utilisateur "0..*" -- "0..*" Approvisionnement 
+
+@enduml
