@@ -22,3 +22,14 @@
    Identifier les principales classes et leurs relations avant de commencer l'implémentation en PHP/POO.
    Prévoir une structure suffisamment claire pour pouvoir faire évoluer le projet par la suite.
 
+
+
+
+    [Vendredi - Phase 1] : Conception & BDD Fallback
+      22h
+- Ce qui a été fait :
+  - Rédaction du script `schema.sql` (PostgreSQL) : 10 tables (`utilisateurs`, `produits`, `clients`, `fournisseurs`, `commandes`, `lignes_commande`, `dettes`, `paiements`, `approvisionnements`, `lignes_approvisionnement`) 
+  - Rédaction du script `schema_sqlite.sql`, équivalent fonctionnel en SQLite .
+- Difficultés / Obstacles :
+  - Différences de syntaxe entre PostgreSQL et SQLite à maintenir en parallèle dans deux scripts cohérents.
+  - j'ai pas vraiment compris sqlite , j'ai pris du temps à regarder ce que ça fait et comment, jusque là , cest pas parfaitement acquis , ya de nouvelles choses
