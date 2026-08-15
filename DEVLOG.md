@@ -32,4 +32,17 @@
   - Rédaction du script `schema_sqlite.sql`, équivalent fonctionnel en SQLite .
 - Difficultés / Obstacles :
   - Différences de syntaxe entre PostgreSQL et SQLite à maintenir en parallèle dans deux scripts cohérents.
-  - j'ai pas vraiment compris sqlite , j'ai pris du temps à regarder ce que ça fait et comment, jusque là , cest pas parfaitement acquis , ya de nouvelles choses
+  - j'ai pas vraiment compris sqlite , j'ai pris du temps à regarder ce que ça fait et comment, jusque là , cest pas parfaitement acquis , ya de nouvelles choses.
+
+
+
+
+### 🌃 [Vendredi - Phase 1] : Database Singleton (Connexion BDD)
+- Heure de réalisation : 00H
+- Ce qui a été fait :
+  - Créé le fichier `src/Core/Database.php`.
+  - Utilisé `getInstance()` pour toujours avoir la même connexion au lieu d'en créer plusieurs.
+- Difficultés / Obstacles :
+  - Pas facile à comprendre le principe de Singleton au début.
+  - Problème avec le namespace, j'ai dû l'enlever car ça marchait pas bien.
+  - j'ai vraiment galéré
