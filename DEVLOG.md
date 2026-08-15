@@ -62,10 +62,3 @@
 
 
 
-### 📌 [Phase 2] : Repositories
-- **Heure de réalisation** : 13h
-- Ce qui a été fait :
-  - Créé `ProduitRepository.php`, `ClientRepository.php`, `FournisseurRepository.php` dans `src/model/Repositories/`.
-  - Ajouté un `namespace` sur ces 3 repositories et sur les entités/`Database.php` correspondantes.
-- **Difficultés / Obstacles** :
-  La POO c'est vraiment pas facile pour moi, j'ai du mal à comprendre certains notions mais je me documentes , et aussi concernant les methodes 
