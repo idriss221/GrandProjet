@@ -46,3 +46,16 @@
   - Pas facile à comprendre le principe de Singleton au début.
   - Problème avec le namespace, j'ai dû l'enlever car ça marchait pas bien.
   - j'ai vraiment galéré
+
+
+
+
+
+### 📌 [Phase 2] : Entités POO Pure
+- **Heure de réalisation** : 09h00 - 11h00
+- Ce qui a été fait :
+  - Créé 10 fichiers dans `src/Model/Entity/` (`Produit.php`, `Client.php`, `Commande.php`, `Dette.php`, etc.)
+  - Mis des `private` avec un type pour chaque propriété.
+- Difficultés / Obstacles :
+  - Pas facile de savoir combien de méthodes il fallait mettre, j'ai fait simple.
+  - J'ai eu du mal à comprendre certains trucs mais avec ça , j'ai pu comprendre ne serait-ce qu'un peu
