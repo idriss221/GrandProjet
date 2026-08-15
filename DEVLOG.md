@@ -62,3 +62,12 @@
 
 
 
+
+
+### 📌 [Phase 2] : Repositories
+- **Heure de réalisation** : 19h
+- Ce qui a été fait :
+  - Créé `ProduitRepository.php`, `ClientRepository.php`, `FournisseurRepository.php` dans `src/Model/Repository/`.
+ - Difficultés / Obstacles :
+  - La POO c'est vraiment pas facile pour moi, j'ai du mal à comprendre pourquoi on doit passer par une classe "Repository" au lieu de juste faire la requête SQL directement.
+    - j'ai du mal à comprendre certaine notions mais je me documente en meme temps.
