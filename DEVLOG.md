@@ -25,7 +25,7 @@
 
 
 
-    [Vendredi - Phase 1] : Conception & BDD Fallback
+    [Vendredi ] : Conception & BDD Fallback
       22h
 - Ce qui a été fait :
   - Rédaction du script `schema.sql` (PostgreSQL) : 10 tables (`utilisateurs`, `produits`, `clients`, `fournisseurs`, `commandes`, `lignes_commande`, `dettes`, `paiements`, `approvisionnements`, `lignes_approvisionnement`) 
@@ -37,7 +37,7 @@
 
 
 
-### 🌃 [Vendredi - Phase 1] : Database Singleton (Connexion BDD)
+### 🌃 [Vendredi ] : Database Singleton (Connexion BDD)
 - Heure de réalisation : 00H
 - Ce qui a été fait :
   - Créé le fichier `src/Core/Database.php`.
@@ -75,12 +75,3 @@
 
 
 
-# Devlog - Implémentation du Service de Vente (Version POO)
-
-- **Heure de réalisation** : 23H
-- Ce qui a été fait : 
-  - Création de la classe `VenteService` dans src/services.
-  -
-- Difficultés / Obstacles : 
-  - Difficulté à comprendre pourquoi on passe `$pdo` et `$venteRepository` dans le constructeur (`__construct`) au lieu de les créer directement dans la fonction.
-  - Assimiler le concept d'injection de dépendances, qui semblait trop abstrait au départ.
