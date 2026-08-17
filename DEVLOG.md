@@ -71,3 +71,16 @@
  - Difficultés / Obstacles :
   - La POO c'est vraiment pas facile pour moi, j'ai du mal à comprendre pourquoi on doit passer par une classe "Repository" au lieu de juste faire la requête SQL directement.
     - j'ai du mal à comprendre certaine notions mais je me documente en meme temps.
+
+
+
+
+# Devlog - Implémentation du Service de Vente (Version POO)
+
+- **Heure de réalisation** : 23H
+- Ce qui a été fait : 
+  - Création de la classe `VenteService` dans src/services.
+  -
+- Difficultés / Obstacles : 
+  - Difficulté à comprendre pourquoi on passe `$pdo` et `$venteRepository` dans le constructeur (`__construct`) au lieu de les créer directement dans la fonction.
+  - Assimiler le concept d'injection de dépendances, qui semblait trop abstrait au départ.
